@@ -9,45 +9,76 @@
         :root { --oro: #d4af37; --azul-sacro: #1a2a6c; --blanco: #ffffff; }
         body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; color: #333; text-align: center; }
         header { background: var(--blanco); padding: 25px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo { max-width: 180px; height: auto; margin-bottom: 15px; }
+        .logo { max-width: 180px; height: auto; margin-bottom: 15px; border-radius: 8px; }
         
-        /* Sección de Contacto Actualizada */
-        .info-contacto { font-size: 0.95rem; color: #444; line-height: 1.6; }
-        .nombre-parroquia { font-weight: 700; color: var(--azul-sacro); font-size: 1.1rem; display: block; margin-bottom: 4px; }
+        .info-contacto { font-size: 0.95rem; color: #444; line-height: 1.6; margin-bottom: 15px; }
+        .nombre-parroquia { font-weight: 700; color: var(--azul-sacro); font-size: 1.2rem; display: block; margin-bottom: 4px; }
         
+        .audio-container { 
+            background: #fdfdfd; border: 2px solid var(--oro); border-radius: 50px; 
+            padding: 10px 20px; max-width: 320px; margin: 10px auto;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
         .fecha-actual { background: var(--azul-sacro); color: white; padding: 12px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; }
-        .container { max-width: 850px; margin: 25px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); min-height: 300px; }
-        h2 { font-family: 'Crimson Text', serif; color: var(--azul-sacro); border-bottom: 3px solid var(--oro); padding-bottom: 8px; margin-bottom: 30px; }
-        .lectura-card { text-align: left; padding: 25px; border-left: 5px solid var(--oro); background: #fffcf0; border-radius: 0 8px 8px 0; }
-        .tipo-lectura { font-weight: bold; color: #8b0000; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-        .texto-biblico { font-family: 'Crimson Text', serif; font-size: 1.3rem; line-height: 1.8; color: #2c3e50; }
+        .container { max-width: 850px; margin: 25px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
         
-        footer { margin-top: 50px; padding: 40px 20px; background: #1a1a1a; color: #aaa; font-size: 0.85rem; line-height: 1.6; }
+        h2 { font-family: 'Crimson Text', serif; color: var(--azul-sacro); border-bottom: 3px solid var(--oro); padding-bottom: 8px; margin-bottom: 30px; }
+        
+        .lectura-card { text-align: left; padding: 25px; border-left: 5px solid var(--oro); background: #fffcf0; border-radius: 0 8px 8px 0; margin-bottom: 25px; }
+        .texto-biblico { font-family: 'Crimson Text', serif; font-size: 1.3rem; line-height: 1.8; color: #2c3e50; }
+
+        /* Nueva Sección de Actualidad */
+        .actualidad-card { background: #eef2f3; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: left; border: 1px solid #ddd; }
+        .actualidad-titulo { font-weight: bold; color: #d35400; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 10px; display: block; }
+        .actualidad-texto { font-size: 1rem; line-height: 1.5; color: #444; }
+
+        .santo-card { background: var(--azul-sacro); color: white; padding: 15px; border-radius: 8px; margin-top: 20px; font-family: 'Crimson Text', serif; }
+        .santo-titulo { font-weight: bold; color: var(--oro); text-transform: uppercase; font-size: 0.9rem; }
+
+        footer { margin-top: 50px; padding: 40px 20px; background: #1a1a1a; color: #aaa; font-size: 0.85rem; }
         .vibras-brand { color: var(--oro); font-weight: bold; font-size: 1rem; }
-        .whatsapp-link { color: #25d366; text-decoration: none; font-weight: bold; }
-        .btn-update { background: var(--oro); color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; margin-top: 30px; font-weight: bold; transition: 0.3s; }
-        .btn-update:hover { background: #b8962d; transform: scale(1.05); }
+        .btn-vatican { background: #005a9c; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
 
-    <div class="fecha-actual" id="reloj-colombia">Cargando fecha de Colombia...</div>
+    <div class="fecha-actual" id="reloj-colombia">Cargando fecha...</div>
 
     <header>
         <img src="pst.PNG" alt="Logo Parroquia" class="logo">
         <div class="info-contacto">
-            <span class="nombre-parroquia">PARROQUIA SANTISIMA TRINIDAD</span>
-            BARRIO EL TRIANGULO - CAUCASIA<br>
-            WhatsApp: <a href="https://wa.me/573117700431" class="whatsapp-link">311 770 0431</a>
+            <span class="nombre-parroquia">PARROQUIA SANTÍSIMA TRINIDAD</span>
+            BARRIO EL TRIÁNGULO - CAUCASIA<br>
+            WhatsApp: <a href="https://wa.me/573117700431" style="color:#25d366; text-decoration:none; font-weight:bold;">311 770 0431</a>
+        </div>
+
+        <div class="audio-container">
+            <audio controls style="width: 100%; height: 30px;">
+                <source src="https://c13.radioboss.fm:8230/stream" type="audio/mpeg">
+            </audio>
         </div>
     </header>
 
     <div class="container">
         <h2>Liturgia de la Eucaristía</h2>
         <div id="evangelio-content">
-            <p style="font-style: italic; color: #777;">Preparando el altar de la palabra...</p>
+            <div class="lectura-card">Cargando Palabra de Dios...</div>
         </div>
-        <button class="btn-update" onclick="obtenerEvangelio()">🔄 Actualizar Lecturas</button>
+
+        <div class="santo-card">
+            <div class="santo-titulo">Santo del Día</div>
+            <div id="nombre-santo" style="font-size: 1.4rem; margin-top: 5px;">...</div>
+        </div>
+
+        <div class="actualidad-card" id="actualidad-seccion">
+            <span class="actualidad-titulo">La Iglesia en el mundo hoy</span>
+            <div id="noticia-papa" class="actualidad-texto">Obteniendo mensajes recientes de la Iglesia sobre la realidad actual...</div>
+        </div>
+
+        <div style="margin-top: 25px;">
+            <a href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" class="btn-vatican">Más Noticias en Vatican News</a>
+        </div>
     </div>
 
     <footer>
@@ -57,7 +88,6 @@
     </footer>
 
     <script>
-        // Reloj en tiempo real de Colombia
         function actualizarReloj() {
             const opciones = { timeZone: 'America/Bogota', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
             document.getElementById('reloj-colombia').innerText = new Date().toLocaleString('es-CO', opciones).toUpperCase();
@@ -65,36 +95,34 @@
         setInterval(actualizarReloj, 1000);
         actualizarReloj();
 
-        // Obtener lecturas de fuente externa estable (RSS a JSON)
-        async function obtenerEvangelio() {
-            const display = document.getElementById('evangelio-content');
-            display.innerHTML = "Cargando palabra de Dios...";
+        async function cargarDatos() {
+            const displayEvangelio = document.getElementById('evangelio-content');
+            const displaySanto = document.getElementById('nombre-santo');
+            const displayNoticia = document.getElementById('noticia-papa');
             
             try {
-                // Fuente: Espacio Sagrado (RSS Litúrgico)
-                const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss`);
-                const data = await res.json();
+                // Datos Litúrgicos
+                const resLiturgy = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss`);
+                const dataLiturgy = await resLiturgy.json();
                 
-                if(data.items && data.items.length > 0) {
-                    const item = data.items[0];
-                    display.innerHTML = `
-                        <div class="lectura-card">
-                            <span class="tipo-lectura">Evangelio y Reflexión de hoy</span>
-                            <div class="texto-biblico">${item.content}</div>
-                        </div>
-                    `;
-                } else {
-                    throw new Error("Sin datos");
+                if(dataLiturgy.items && dataLiturgy.items.length > 0) {
+                    displayEvangelio.innerHTML = `<div class="lectura-card"><div class="texto-biblico">${dataLiturgy.items[0].content}</div></div>`;
+                    displaySanto.innerText = dataLiturgy.items[0].title;
+                }
+
+                // Noticias de la Iglesia (Actualidad)
+                const resNews = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.vaticannews.va/es.rss.xml`);
+                const dataNews = await resNews.json();
+                
+                if(dataNews.items && dataNews.items.length > 0) {
+                    const ultimaNoticia = dataNews.items[0];
+                    displayNoticia.innerHTML = `<strong>${ultimaNoticia.title}</strong><br><small>${ultimaNoticia.description.substring(0, 150)}...</small>`;
                 }
             } catch (e) {
-                display.innerHTML = `
-                    <div class="lectura-card" style="text-align:center;">
-                        <p>No pudimos conectar automáticamente.</p>
-                        <a href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" style="color:var(--azul-sacro); font-weight:bold;">Toca aquí para ver el Evangelio en Vatican News</a>
-                    </div>`;
+                displayNoticia.innerText = "La Iglesia nos invita hoy a orar por la paz y la unidad de las familias.";
             }
         }
-        obtenerEvangelio();
+        window.onload = cargarDatos;
     </script>
 </body>
 </html>
