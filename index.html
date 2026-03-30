@@ -3,84 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semana Santa - Parroquia Santísima Trinidad</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Parroquia Santísima Trinidad - Caucasia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --oro: #d4af37; --azul-sacro: #1a2a6c; --blanco: #ffffff; --gris-claro: #f4f4f4; --vino: #800000; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--gris-claro); color: #333; text-align: center; }
-        header { background: var(--blanco); padding: 25px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .logo { max-width: 160px; height: auto; margin-bottom: 10px; border-radius: 8px; }
-        .nombre-parroquia { font-weight: 700; color: var(--azul-sacro); font-size: 1.3rem; display: block; text-transform: uppercase; }
-        .container { max-width: 900px; margin: 15px auto; padding: 25px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        
-        /* SECCIÓN DE IMÁGENES */
-        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
-        .img-item { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .folleto-stack { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .folleto-img { max-width: 100%; border-radius: 5px; border: 1px solid #ddd; }
-
-        /* PALABRA DEL SEÑOR */
-        .lectura-card { text-align: left; padding: 20px; background: #fffcf0; border-left: 8px solid var(--oro); border-radius: 8px; margin: 20px 0; }
-        .audio-player { width: 100%; margin: 15px 0; }
-
-        footer { margin-top: 40px; padding: 30px 20px; background: #1a1a1a; color: #aaa; font-size: 0.85rem; border-top: 4px solid var(--oro); }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background: #f4f4f4; text-align: center; }
+        header { background: white; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { max-width: 150px; margin-bottom: 10px; }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 15px; }
+        h2 { color: #1a2a6c; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        img { max-width: 100%; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .folleto-box { display: flex; flex-direction: column; gap: 10px; }
+        .palabra-box { background: #fffcf0; padding: 20px; border-left: 8px solid #d4af37; text-align: left; margin-bottom: 20px; }
+        footer { background: #1a1a1a; color: #d4af37; padding: 30px; font-size: 0.9rem; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="pst.PNG" alt="Logo Parroquia" class="logo">
-        <span class="nombre-parroquia">Parroquia Santísima Trinidad</span>
-        <div style="font-size: 0.9rem;">BARRIO EL TRIÁNGULO - CAUCASIA</div>
-        <a href="https://wa.me/573117700431" style="color:#25d366; text-decoration:none; font-weight:bold;">WhatsApp: 311 770 0431</a>
-    </header>
+<header>
+    <img src="pst.PNG" alt="Logo" class="logo">
+    <div style="font-weight: bold; color: #1a2a6c;">PARROQUIA SANTÍSIMA TRINIDAD</div>
+    <div style="font-size: 0.8rem; color: #666;">BARRIO EL TRIÁNGULO - CAUCASIA</div>
+    <div style="color: #25d366; font-weight: bold;">WhatsApp: 311 770 0431</div>
+</header>
 
-    <div class="container">
-        <h2>Semana Santa 2026</h2>
+<div class="container">
+    <h2>Semana Santa 2026</h2>
 
-        <div class="lectura-card">
-            <h3 style="margin-top:0; color:var(--azul-sacro);">📖 LA PALABRA DEL SEÑOR</h3>
-            <audio controls class="audio-player">
-                <source src="https://media.vaticannews.va/media/audio/s1/2026/03/30/171177600431.mp3" type="audio/mpeg">
-            </audio>
-            <div id="texto-evangelio">Cargando lectura bíblica...</div>
-        </div>
-
-        <h3>🌿 Domingo de Ramos</h3>
-        <div class="img-grid">
-            <img src="domingoramos.jpeg" class="img-item" alt="Ramos 1">
-            <img src="domingoramos1.jpeg" class="img-item" alt="Ramos 2">
-        </div>
-
-        <h3>📅 Horarios y Programación</h3>
-        <div class="folleto-stack">
-            <img src="folleto1.jpeg" class="folleto-img">
-            <img src="folleto2.jpeg" class="folleto-img">
-            <img src="folleto3.jpeg" class="folleto-img">
-            <img src="folleto4.jpeg" class="folleto-img">
-        </div>
+    <div class="palabra-box">
+        <h3 style="margin-top:0;">📖 PALABRA DEL SEÑOR</h3>
+        <p>Escucha la reflexión de hoy:</p>
+        <audio controls style="width: 100%;">
+            <source src="https://media.vaticannews.va/media/audio/s1/2026/03/30/171177600431.mp3" type="audio/mpeg">
+        </audio>
+        <div id="texto-evangelio" style="margin-top:15px; font-style: italic;">Cargando mensaje de fe...</div>
     </div>
 
-    <footer>
-        <div style="color:var(--oro); font-weight:bold;">App desarrollada por Vibras Positivas ©</div>
-        Derechos de autor (3117700431) - En compañía del Padre Joan Daza<br>
-        Caucasia, Antioquia - Colombia
-    </footer>
+    <h3>🌿 Domingo de Ramos</h3>
+    <img src="domingoramos.jpeg" alt="Ramos 1">
+    <img src="domingoramos1.jpeg" alt="Ramos 2">
 
-    <script>
-        async function cargarLectura() {
-            try {
-                // Usamos un proxy para evitar bloqueos de seguridad del navegador
-                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss');
-                const data = await res.json();
-                if(data.items && data.items.length > 0) {
-                    document.getElementById('texto-evangelio').innerHTML = data.items[0].content;
-                }
-            } catch (e) {
-                document.getElementById('texto-evangelio').innerHTML = "La lectura está disponible en Vatican News.";
-            }
+    <h3>📅 Horarios y Programación</h3>
+    <div class="folleto-box">
+        <img src="folleto1.jpeg">
+        <img src="folleto2.jpeg">
+        <img src="folleto3.jpeg">
+        <img src="folleto4.jpeg">
+    </div>
+</div>
+
+<footer>
+    <strong>App desarrollada por Vibras Positivas ©</strong><br>
+    Derechos de autor (3117700431) - Padre Joan Daza<br>
+    Caucasia, Antioquia
+</footer>
+
+<script>
+    async function traerLectura() {
+        try {
+            const r = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss&t=' + Date.now());
+            const d = await r.json();
+            if(d.items) document.getElementById('texto-evangelio').innerHTML = d.items[0].content;
+        } catch(e) {
+            document.getElementById('texto-evangelio').innerText = "Disponible en Vatican News.";
         }
-        window.onload = cargarLectura;
-    </script>
+    }
+    window.onload = traerLectura;
+</script>
+
 </body>
 </html>
