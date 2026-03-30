@@ -9,84 +9,43 @@
         :root { --oro: #d4af37; --azul-sacro: #1a2a6c; --blanco: #ffffff; --gris-claro: #f4f4f4; --vino: #800000; }
         body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--gris-claro); color: #333; text-align: center; line-height: 1.6; }
         
-        /* Encabezado */
         header { background: var(--blanco); padding: 30px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .logo { max-width: 200px; height: auto; margin-bottom: 20px; border-radius: 8px; }
-        .info-contacto { font-size: 1rem; color: #444; margin-bottom: 20px; }
-        .nombre-parroquia { font-weight: 700; color: var(--azul-sacro); font-size: 1.4rem; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        .logo { max-width: 180px; height: auto; margin-bottom: 15px; border-radius: 8px; }
+        .info-contacto { font-size: 1rem; color: #444; margin-bottom: 10px; }
+        .nombre-parroquia { font-weight: 700; color: var(--azul-sacro); font-size: 1.3rem; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* Contenedores Principales */
-        .container { max-width: 900px; margin: 30px auto; padding: 40px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .fecha-actual { background: var(--azul-sacro); color: white; padding: 15px; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .container { max-width: 900px; margin: 20px auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .fecha-actual { background: var(--azul-sacro); color: white; padding: 12px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Títulos */
-        h2 { font-family: 'Crimson Text', serif; color: var(--azul-sacro); font-size: 2.2rem; border-bottom: 3px solid var(--oro); display: inline-block; padding-bottom: 10px; margin-bottom: 40px; }
-        h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--vino); text-transform: uppercase; font-size: 1.1rem; margin-top: 30px; margin-bottom: 15px; letter-spacing: 1px;}
+        h2 { font-family: 'Crimson Text', serif; color: var(--azul-sacro); font-size: 2rem; border-bottom: 3px solid var(--oro); display: inline-block; padding-bottom: 8px; margin-bottom: 30px; }
+        h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--vino); text-transform: uppercase; font-size: 1rem; margin-top: 25px; margin-bottom: 15px; letter-spacing: 1px;}
 
-        /* SECCIÓN PROFESIONAL DEL FOLLETO (Prioridad 1) */
-        .folleto-seccion { background: #fffdf5; border: 2px solid var(--oro); padding: 20px; border-radius: 12px; margin-bottom: 40px; }
-        .folleto-container { display: flex; flex-direction: column; gap: 25px; align-items: center; }
-        .folleto-page { 
-            max-width: 100%; 
-            height: auto; 
-            border-radius: 4px; 
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
-            border: 1px solid #e0e0e0;
-            transition: transform 0.3s ease;
-        }
-        .folleto-page:hover { transform: scale(1.02); } /* Efecto Pro al pasar el mouse */
+        /* SECCIÓN FOLLETO */
+        .folleto-seccion { background: #fffdf5; border: 2px solid var(--oro); padding: 15px; border-radius: 12px; margin-bottom: 30px; }
+        .folleto-container { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+        .folleto-page { max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); border: 1px solid #e0e0e0; }
 
-        /* SECCIÓN GALERÍA DOMINGO DE RAMOS */
-        .ramos-seccion { margin-bottom: 40px; }
-        .ramos-gallery { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 20px; 
-            justify-items: center; 
-        }
-        .ramos-img { 
-            width: 100%; 
-            max-width: 400px; 
-            height: auto; 
-            border-radius: 12px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12); 
-            object-fit: cover;
-        }
+        /* GALERÍA RAMOS */
+        .ramos-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .ramos-img { width: 100%; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); object-fit: cover; }
 
-        /* Secciones Secundarias (Liturgia y Actualidad) */
-        .seccion-secundaria { margin-top: 50px; border-top: 1px solid #eee; padding-top: 40px; }
-        .lectura-card { text-align: left; padding: 30px; border-left: 6px solid var(--oro); background: #fffcf0; border-radius: 0 12px 12px 0; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-        .texto-biblico { font-family: 'Crimson Text', serif; font-size: 1.4rem; line-height: 1.8; color: #2c3e50; }
-        .actualidad-card { background: #eef2f3; padding: 25px; border-radius: 12px; text-align: left; border: 1px solid #ddd; margin-bottom: 30px;}
-        .actualidad-titulo { font-weight: bold; color: #d35400; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 12px; display: block; letter-spacing: 1px;}
-        .santo-card { background: var(--azul-sacro); color: white; padding: 20px; border-radius: 12px; font-family: 'Crimson Text', serif; margin-bottom: 30px;}
-        .santo-titulo { font-weight: bold; color: var(--oro); text-transform: uppercase; font-size: 1rem; letter-spacing: 1px;}
+        /* SECCIÓN PALABRA DEL DÍA - DIRECTA */
+        .lectura-card { text-align: left; padding: 25px; border-left: 6px solid var(--oro); background: #fffcf0; border-radius: 0 12px 12px 0; margin-bottom: 20px; }
+        .titulo-evangelio { color: var(--vino); font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; display: block; }
+        .texto-biblico { font-family: 'Crimson Text', serif; font-size: 1.3rem; line-height: 1.7; color: #2c3e50; }
 
-        /* Botones y Audio */
-        .audio-container { 
-            background: #fdfdfd; border: 2px solid var(--oro); border-radius: 50px; 
-            padding: 10px 20px; max-width: 320px; margin: 0 auto 30px auto;
-            display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .btn-vatican { background: #005a9c; color: white; border: none; padding: 15px 30px; border-radius: 30px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; font-size: 1rem; transition: background 0.3s ease; }
-        .btn-vatican:hover { background: #004475; }
+        .santo-card { background: var(--azul-sacro); color: white; padding: 15px; border-radius: 12px; font-family: 'Crimson Text', serif; margin-bottom: 20px;}
+        .btn-vatican { background: #005a9c; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; font-size: 0.9rem; margin-top: 10px; }
 
-        /* Pie de Página */
-        footer { margin-top: 60px; padding: 50px 20px; background: #1a1a1a; color: #aaa; font-size: 0.9rem; border-top: 4px solid var(--oro); }
-        .vibras-brand { color: var(--oro); font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 10px; }
+        footer { margin-top: 40px; padding: 40px 20px; background: #1a1a1a; color: #aaa; font-size: 0.85rem; border-top: 4px solid var(--oro); }
+        .vibras-brand { color: var(--oro); font-weight: bold; font-size: 1rem; display: block; margin-bottom: 8px; }
 
-        /* Responsividad para Móviles */
-        @media (max-width: 600px) {
-            .container { padding: 20px; margin: 15px; }
-            h2 { font-size: 1.8rem; }
-            .folleto-page { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-            .ramos-gallery { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 600px) { .container { padding: 15px; margin: 10px; } h2 { font-size: 1.6rem; } }
     </style>
 </head>
 <body>
 
-    <div class="fecha-actual" id="reloj-colombia">Cargando...</div>
+    <div class="fecha-actual" id="reloj-colombia">Cargando fecha...</div>
 
     <header>
         <img src="pst.PNG" alt="Logo Parroquia Santísima Trinidad" class="logo">
@@ -95,57 +54,40 @@
             BARRIO EL TRIÁNGULO - CAUCASIA<br>
             WhatsApp: <a href="https://wa.me/573117700431" style="color:#25d366; text-decoration:none; font-weight:bold;">311 770 0431</a>
         </div>
-
-        <div class="audio-container">
-            <div style="font-size: 0.8rem; color: var(--azul-sacro); font-weight: bold; margin-bottom: 5px;">MÚSICA PARA MEDITAR</div>
-            <audio controls style="width: 100%; height: 35px;">
-                <source src="https://c13.radioboss.fm:8230/stream" type="audio/mpeg">
-            </audio>
-        </div>
     </header>
 
     <div class="container">
         <h2>Semana Santa 2026</h2>
 
         <div class="folleto-seccion">
-            <h3>📖 Programación Completa (Folleto)</h3>
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">Desliza hacia abajo para ver todas las páginas y horarios.</p>
+            <h3>📖 Programación de Semana Santa</h3>
             <div class="folleto-container">
-                <img src="folleto1.jpeg" alt="Folleto Semana Santa Página 1" class="folleto-page">
-                <img src="folleto2.jpeg" alt="Folleto Semana Santa Página 2" class="folleto-page">
-                <img src="folleto3.jpeg" alt="Folleto Semana Santa Página 3" class="folleto-page">
-                <img src="folleto4.jpeg" alt="Folleto Semana Santa Página 4" class="folleto-page">
+                <img src="folleto1.jpeg" class="folleto-page">
+                <img src="folleto2.jpeg" class="folleto-page">
+                <img src="folleto3.jpeg" class="folleto-page">
+                <img src="folleto4.jpeg" class="folleto-page">
             </div>
         </div>
 
-        <div class="ramos-seccion">
-            <h3>🌿 Momentos del Domingo de Ramos</h3>
-            <div class="ramos-gallery">
-                <img src="domingoramos.jpeg" alt="Celebración Domingo de Ramos 1" class="ramos-img">
-                <img src="domingoramos1.jpeg" alt="Celebración Domingo de Ramos 2" class="ramos-img">
+        <h3>🌿 Domingo de Ramos</h3>
+        <div class="ramos-gallery">
+            <img src="domingoramos.jpeg" class="ramos-img">
+            <img src="domingoramos1.jpeg" class="ramos-img">
+        </div>
+
+        <h3 style="border-top: 1px solid #eee; pt-4; padding-top: 20px;">📖 Palabra del Señor</h3>
+        <div id="evangelio-content">
+            <div class="lectura-card">
+                <span class="titulo-evangelio">Cargando Evangelio desde Vatican News...</span>
             </div>
         </div>
 
-        <div class="seccion-secundaria">
-            <h3>Misa y Oración Diaria</h3>
-            <div id="evangelio-content">
-                <div class="lectura-card">Cargando Palabra de Dios...</div>
-            </div>
-
-            <div class="santo-card">
-                <div class="santo-titulo">Santo del Día</div>
-                <div id="nombre-santo" style="font-size: 1.6rem; margin-top: 5px; font-weight: 700;">...</div>
-            </div>
-
-            <div class="actualidad-card" id="actualidad-seccion">
-                <span class="actualidad-titulo">La Iglesia en el mundo hoy</span>
-                <div id="noticia-papa" class="actualidad-texto">Obteniendo mensajes recientes de la Iglesia...</div>
-            </div>
-
-            <div style="margin-top: 30px; margin-bottom: 20px;">
-                <a href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" class="btn-vatican">Ver más en Vatican News</a>
-            </div>
+        <div class="santo-card">
+            <div style="text-transform: uppercase; font-size: 0.8rem; color: var(--oro); font-weight: bold; letter-spacing: 1px;">Santo del Día</div>
+            <div id="nombre-santo" style="font-size: 1.5rem; margin-top: 5px; font-weight: 700;">...</div>
         </div>
+
+        <a href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" class="btn-vatican">Ir a Vatican News</a>
     </div>
 
     <footer>
@@ -162,34 +104,28 @@
         setInterval(actualizarReloj, 1000);
         actualizarReloj();
 
-        async function cargarDatos() {
+        async function cargarVaticano() {
             const displayEvangelio = document.getElementById('evangelio-content');
             const displaySanto = document.getElementById('nombre-santo');
-            const displayNoticia = document.getElementById('noticia-papa');
             
             try {
-                // Datos Litúrgicos y Santo del Día
-                const resLiturgy = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss`);
-                const dataLiturgy = await resLiturgy.json();
+                // Obtenemos la liturgia de hoy automáticamente
+                const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss`);
+                const data = await res.json();
                 
-                if(dataLiturgy.items && dataLiturgy.items.length > 0) {
-                    displayEvangelio.innerHTML = `<div class="lectura-card"><div class="texto-biblico">${dataLiturgy.items[0].content}</div></div>`;
-                    displaySanto.innerText = dataLiturgy.items[0].title;
-                }
-
-                // Noticias de la Iglesia (Actualidad)
-                const resNews = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://www.vaticannews.va/es.rss.xml`);
-                const dataNews = await resNews.json();
-                
-                if(dataNews.items && dataNews.items.length > 0) {
-                    const ultimaNoticia = dataNews.items[0];
-                    displayNoticia.innerHTML = `<strong>${ultimaNoticia.title}</strong><br><small>${ultimaNoticia.description.substring(0, 180)}...</small>`;
+                if(data.items && data.items.length > 0) {
+                    displayEvangelio.innerHTML = `
+                        <div class="lectura-card">
+                            <span class="titulo-evangelio">Evangelio y Reflexión de Hoy</span>
+                            <div class="texto-biblico">${data.items[0].content}</div>
+                        </div>`;
+                    displaySanto.innerText = data.items[0].title;
                 }
             } catch (e) {
-                displayNoticia.innerText = "La Iglesia nos invita hoy a vivir la Semana Santa con fe y devoción en familia.";
+                displayEvangelio.innerHTML = `<div class="lectura-card">No se pudo cargar automáticamente. Use el botón azul para abrir Vatican News.</div>`;
             }
         }
-        window.onload = cargarDatos;
+        window.onload = cargarVaticano;
     </script>
 </body>
 </html>
