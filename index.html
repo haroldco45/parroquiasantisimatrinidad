@@ -12,29 +12,24 @@
         .logo { max-width: 160px; height: auto; margin-bottom: 10px; border-radius: 8px; }
         .nombre-parroquia { font-weight: 700; color: var(--azul-sacro); font-size: 1.3rem; display: block; text-transform: uppercase; }
         .container { max-width: 900px; margin: 15px auto; padding: 25px; background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .fecha-actual { background: var(--azul-sacro); color: white; padding: 10px; font-size: 0.8rem; font-weight: bold; }
         
-        /* BLOQUE DE AUDIO Y TEXTO */
-        .seccion-palabra { background: #f0f4f8; padding: 20px; border-radius: 12px; margin-bottom: 25px; border-left: 8px solid var(--azul-sacro); text-align: left; }
-        .lectura-texto { margin-top: 15px; padding: 15px; background: #fffcf0; border-radius: 8px; font-family: 'Crimson Text', serif; font-size: 1.2rem; border: 1px solid #eee; }
+        /* SECCIÓN DE IMÁGENES */
+        .img-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .img-item { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .folleto-stack { display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .folleto-img { max-width: 100%; border-radius: 5px; border: 1px solid #ddd; }
 
-        /* FOLLETO */
-        .folleto-container { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .folleto-page { max-width: 100%; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        /* PALABRA DEL SEÑOR */
+        .lectura-card { text-align: left; padding: 20px; background: #fffcf0; border-left: 8px solid var(--oro); border-radius: 8px; margin: 20px 0; }
+        .audio-player { width: 100%; margin: 15px 0; }
 
-        .santo-card { background: var(--azul-sacro); color: white; padding: 15px; border-radius: 12px; margin: 20px 0; }
-        .santo-nombre { font-size: 1.4rem; font-weight: 700; color: var(--oro); }
-
-        footer { margin-top: 40px; padding: 30px 20px; background: #1a1a1a; color: #aaa; font-size: 0.85rem; }
-        .btn-vatican { background: #005a9c; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 10px; }
+        footer { margin-top: 40px; padding: 30px 20px; background: #1a1a1a; color: #aaa; font-size: 0.85rem; border-top: 4px solid var(--oro); }
     </style>
 </head>
 <body>
 
-    <div class="fecha-actual" id="reloj-colombia">CARGANDO FECHA...</div>
-
     <header>
-        <img src="pst.PNG" alt="Logo" class="logo">
+        <img src="pst.PNG" alt="Logo Parroquia" class="logo">
         <span class="nombre-parroquia">Parroquia Santísima Trinidad</span>
         <div style="font-size: 0.9rem;">BARRIO EL TRIÁNGULO - CAUCASIA</div>
         <a href="https://wa.me/573117700431" style="color:#25d366; text-decoration:none; font-weight:bold;">WhatsApp: 311 770 0431</a>
@@ -43,64 +38,49 @@
     <div class="container">
         <h2>Semana Santa 2026</h2>
 
-        <div class="seccion-palabra">
-            <h3 style="margin:0; color:var(--azul-sacro);">📖 LA PALABRA DEL SEÑOR</h3>
-            <p style="font-size:0.85rem; margin:10px 0;">Escucha la reflexión de hoy:</p>
-            <audio controls style="width: 100%;">
+        <div class="lectura-card">
+            <h3 style="margin-top:0; color:var(--azul-sacro);">📖 LA PALABRA DEL SEÑOR</h3>
+            <audio controls class="audio-player">
                 <source src="https://media.vaticannews.va/media/audio/s1/2026/03/30/171177600431.mp3" type="audio/mpeg">
-                Tu navegador no soporta el audio.
             </audio>
-            <div id="evangelio-texto" class="lectura-texto">Cargando lectura bíblica...</div>
+            <div id="texto-evangelio">Cargando lectura bíblica...</div>
         </div>
 
-        <div class="santo-card">
-            <div style="text-transform: uppercase; font-size: 0.7rem;">Santo del Día</div>
-            <div id="nombre-santo" class="santo-nombre">Cargando...</div>
+        <h3>🌿 Domingo de Ramos</h3>
+        <div class="img-grid">
+            <img src="domingoramos.jpeg" class="img-item" alt="Ramos 1">
+            <img src="domingoramos1.jpeg" class="img-item" alt="Ramos 2">
         </div>
 
-        <div class="folleto-seccion">
-            <h3 style="color:var(--vino);">📅 Horarios y Programación</h3>
-            <div class="folleto-container">
-                <img src="folleto1.jpeg" class="folleto-page">
-                <img src="folleto2.jpeg" class="folleto-page">
-                <img src="folleto3.jpeg" class="folleto-page">
-                <img src="folleto4.jpeg" class="folleto-page">
-            </div>
-        </div>
-
-        <div style="margin-top: 30px;">
-            <a href="https://www.vaticannews.va/es/evangelio-de-hoy.html" target="_blank" class="btn-vatican">Ir a Vatican News Directo</a>
+        <h3>📅 Horarios y Programación</h3>
+        <div class="folleto-stack">
+            <img src="folleto1.jpeg" class="folleto-img">
+            <img src="folleto2.jpeg" class="folleto-img">
+            <img src="folleto3.jpeg" class="folleto-img">
+            <img src="folleto4.jpeg" class="folleto-img">
         </div>
     </div>
 
     <footer>
         <div style="color:var(--oro); font-weight:bold;">App desarrollada por Vibras Positivas ©</div>
-        Derechos de autor (3117700431) - En compañía del <strong>Padre Joan Daza</strong><br>
+        Derechos de autor (3117700431) - En compañía del Padre Joan Daza<br>
         Caucasia, Antioquia - Colombia
     </footer>
 
     <script>
-        function actualizarReloj() {
-            const opciones = { timeZone: 'America/Bogota', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            document.getElementById('reloj-colombia').innerText = new Date().toLocaleString('es-CO', opciones).toUpperCase();
-        }
-        setInterval(actualizarReloj, 1000);
-        actualizarReloj();
-
-        async function cargar() {
+        async function cargarLectura() {
             try {
-                // Forzamos la actualización saltando la caché con un número aleatorio
-                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss&t=' + Math.random());
+                // Usamos un proxy para evitar bloqueos de seguridad del navegador
+                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss');
                 const data = await res.json();
                 if(data.items && data.items.length > 0) {
-                    document.getElementById('evangelio-texto').innerHTML = data.items[0].content;
-                    document.getElementById('nombre-santo').innerText = data.items[0].title;
+                    document.getElementById('texto-evangelio').innerHTML = data.items[0].content;
                 }
             } catch (e) {
-                document.getElementById('evangelio-texto').innerText = "Abra Vatican News para la lectura.";
+                document.getElementById('texto-evangelio').innerHTML = "La lectura está disponible en Vatican News.";
             }
         }
-        window.onload = cargar;
+        window.onload = cargarLectura;
     </script>
 </body>
 </html>
