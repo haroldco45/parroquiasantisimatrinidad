@@ -16,7 +16,6 @@
         h3 { color: var(--vino); text-transform: uppercase; margin-top: 40px; font-size: 1.2rem; letter-spacing: 1px; }
         
         .palabra-box, .audio-padre-box { background: #fffcf0; padding: 25px; border-left: 10px solid var(--oro); text-align: left; margin-bottom: 30px; border-radius: 0 15px 15px 0; }
-        /* La caja del audio ahora está visible por defecto con el archivo cargado */
         .audio-padre-box { background: #f0f4ff; border-left-color: var(--azul); display: block; }
         
         .texto-sagrado { font-family: 'Crimson Text', serif; font-size: 1.4rem; line-height: 1.8; color: #2c3e50; margin-top: 20px; }
@@ -41,21 +40,21 @@
 <div class="container">
     <h2>Semana Santa 2026</h2>
 
-    <div id="seccion-padre" class="audio-padre-box">
-        <span class="badge-padre">MENSAJE DEL DÍA</span>
-        <h3 style="margin-top:0; color: var(--azul);">🎙️ Reflexión del Padre Joan Daza</h3>
-        <p id="nombre-audio-display" style="font-weight: bold; color: #555; margin-bottom: 15px;">Palabra del Día - 5 de Abril</p>
-        <audio id="reproductor-padre" controls style="width: 100%;">
-            <source src="Palabra-del-Día-5-abril.m4a" type="audio/mp4">
+    <div id="seccion-palabra" class="audio-padre-box">
+        <span class="badge-padre">AUDIO PODCAST</span>
+        <h3 style="margin-top:0; color: var(--azul);">🎙️ La Palabra del Día</h3>
+        <p style="font-weight: bold; color: #555; margin-bottom: 15px;">Domingo de Resurrección - 5 de Abril</p>
+        <audio id="reproductor-palabra" controls style="width: 100%;">
+            <source src="palabra-del-dia-5_4_2026.m4a" type="audio/mp4">
             Tu navegador no soporta el audio.
         </audio>
     </div>
 
     <div class="palabra-box">
-        <h3 style="margin-top:0; color: var(--azul);">📖 PALABRA DEL SEÑOR</h3>
-        <p style="font-weight: bold; color: #555;">Lectura del Evangelio:</p>
+        <h3 style="margin-top:0; color: var(--azul);">📖 EVANGELIO ESCRITO</h3>
+        <p style="font-weight: bold; color: #555;">Meditación del Domingo:</p>
         <div id="texto-evangelio" class="texto-sagrado">
-            <p style="text-align:center; color: #999; font-style: italic;">Cargando lecturas sagradas...</p>
+            <p style="text-align:center; color: #999; font-style: italic;">Sincronizando con Vatican News...</p>
         </div>
     </div>
 
@@ -80,7 +79,7 @@
 
 <script>
     async function inicializarApp() {
-        // Cargar Evangelio desde RSS público (Espacio Sagrado o similar)
+        // Cargar Evangelio dinámico
         const contenedor = document.getElementById('texto-evangelio');
         try {
             const respuesta = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss&t=' + Date.now());
@@ -89,8 +88,15 @@
                 contenedor.innerHTML = `<strong>${datos.items[0].title}</strong><br><br>` + datos.items[0].content;
             } else { throw new Error(); }
         } catch(e) {
-            contenedor.innerHTML = "<p style='text-align:center;'>Consulta el Evangelio completo en Vatican News: <br><br> <a href='https://www.vaticannews.va/es/evangelio-de-hoy.html' target='_blank' style='color:var(--azul)'>Toca aquí para leer.</a></p>";
+            contenedor.innerHTML = "<p style='text-align:center;'>Lectura disponible en: <br><br> <a href='https://www.vaticannews.va/es/evangelio-de-hoy.html' target='_blank' style='color:var(--azul)'>Vatican News - Evangelio de Hoy</a></p>";
         }
+
+        // Control para evitar repetición infinita del audio
+        const audio = document.getElementById('reproductor-palabra');
+        audio.onended = function() {
+            audio.pause();
+            console.log("Palabra del día finalizada.");
+        };
     }
 
     window.onload = inicializarApp;
