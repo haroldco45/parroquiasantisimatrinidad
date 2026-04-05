@@ -15,17 +15,17 @@
         h2 { color: var(--azul); border-bottom: 3px solid var(--oro); display: inline-block; padding-bottom: 5px; font-size: 2rem; }
         h3 { color: var(--vino); text-transform: uppercase; margin-top: 40px; font-size: 1.2rem; letter-spacing: 1px; }
         
-        /* BLOQUE DE LA PALABRA */
-        .palabra-box { background: #fffcf0; padding: 25px; border-left: 10px solid var(--oro); text-align: left; margin-bottom: 30px; border-radius: 0 15px 15px 0; }
+        .palabra-box, .audio-padre-box { background: #fffcf0; padding: 25px; border-left: 10px solid var(--oro); text-align: left; margin-bottom: 30px; border-radius: 0 15px 15px 0; }
+        .audio-padre-box { background: #f0f4ff; border-left-color: var(--azul); }
+        
         .texto-sagrado { font-family: 'Crimson Text', serif; font-size: 1.4rem; line-height: 1.8; color: #2c3e50; margin-top: 20px; }
         
-        /* MULTIMEDIA */
         img { max-width: 100%; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
         img:hover { transform: scale(1.01); }
-        .folleto-box { display: flex; flex-direction: column; gap: 15px; }
         
         footer { background: #1a1a1a; color: var(--oro); padding: 40px 20px; font-size: 0.9rem; margin-top: 50px; border-top: 5px solid var(--oro); }
         .whatsapp-btn { color: #25d366; font-weight: bold; text-decoration: none; font-size: 1.1rem; }
+        .badge-padre { background: var(--azul); color: white; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-bottom: 10px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -39,6 +39,16 @@
 
 <div class="container">
     <h2>Semana Santa 2026</h2>
+
+    <div id="seccion-padre" class="audio-padre-box" style="display:none;">
+        <span class="badge-padre">NUEVO AUDIO</span>
+        <h3 style="margin-top:0; color: var(--azul);">🎙️ Reflexión del Padre Joan Daza</h3>
+        <p id="nombre-audio-display" style="font-weight: bold; color: #555; margin-bottom: 15px;">Cargando audio...</p>
+        <audio id="reproductor-padre" controls style="width: 100%;">
+            <source id="src-padre" src="" type="audio/mp4">
+            Tu navegador no soporta el audio.
+        </audio>
+    </div>
 
     <div class="palabra-box">
         <h3 style="margin-top:0; color: var(--azul);">📖 PALABRA DEL SEÑOR</h3>
@@ -67,31 +77,43 @@
 </div>
 
 <footer>
-    <div style="font-size: 1.1rem; margin-bottom: 10px;">App desarrollada por <strong>Vibras Positivas ©</strong></div>
+    <div style="font-size: 1.1rem; margin-bottom: 10px;">App desarrollada por <strong>VIBRAS POSITIVAS HM ©</strong></div>
     Derechos de autor (3117700431) - Padre Joan Daza<br>
     Caucasia, Antioquia - Colombia
 </footer>
 
 <script>
-    async function extraerPalabra() {
+    async function inicializarApp() {
+        // 1. Cargar Evangelio
         const contenedor = document.getElementById('texto-evangelio');
         try {
-            // Extracción directa de la liturgia mediante API de RSS
             const respuesta = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.espaciosagrado.com/daily-prayer/rss&t=' + Date.now());
             const datos = await respuesta.json();
-            
             if(datos.items && datos.items.length > 0) {
-                // Colocamos el título y el contenido extraído
-                const titulo = `<strong>${datos.items[0].title}</strong><br><br>`;
-                contenedor.innerHTML = titulo + datos.items[0].content;
-            } else {
-                throw new Error();
-            }
+                contenedor.innerHTML = `<strong>${datos.items[0].title}</strong><br><br>` + datos.items[0].content;
+            } else { throw new Error(); }
         } catch(e) {
-            contenedor.innerHTML = "<p style='text-align:center;'>La Palabra del Señor está lista para ti en Vatican News. <br><br> <a href='https://www.vaticannews.va/es/evangelio-de-hoy.html' target='_blank' style='color:var(--azul)'>Toca aquí para leerla directamente.</a></p>";
+            contenedor.innerHTML = "<p style='text-align:center;'>La Palabra del Señor está lista en Vatican News. <br><br> <a href='https://www.vaticannews.va/es/evangelio-de-hoy.html' target='_blank' style='color:var(--azul)'>Toca aquí para leerla.</a></p>";
         }
+
+        // 2. Pedir audio del Padre Joan Daza
+        setTimeout(() => {
+            const nombreArchivo = prompt("Ingrese el nombre del archivo de audio del Padre Joan (ej: reflexion_lunes.m4a):");
+            if (nombreArchivo && nombreArchivo.trim() !== "") {
+                const seccion = document.getElementById('seccion-padre');
+                const reproductor = document.getElementById('reproductor-padre');
+                const fuente = document.getElementById('src-padre');
+                const display = document.getElementById('nombre-audio-display');
+
+                fuente.src = nombreArchivo;
+                display.innerText = "Archivo: " + nombreArchivo;
+                seccion.style.display = "block";
+                reproductor.load();
+            }
+        }, 500);
     }
-    window.onload = extraerPalabra;
+
+    window.onload = inicializarApp;
 </script>
 
 </body>
